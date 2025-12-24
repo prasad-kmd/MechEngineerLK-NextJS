@@ -1,1 +1,0 @@
-# MechEngineerLK-NextJS
