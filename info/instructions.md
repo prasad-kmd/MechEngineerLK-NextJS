@@ -3,15 +3,15 @@
 Create a responsive, high-performance web application combining portfolio, blog, and PWA features for a mechanical engineering professional. The application should showcase engineering projects, technical articles with mathematical equations, and professional information in an aesthetically pleasing interface with dark/light themes.
 
 ## **Technical Stack**
-- **Framework:** Next.js latest (App Router) with TypeScript
+- **Framework:** Next.js latest (App Router) with TypeScript [do not change the nextjs & tailwind version, just keep it nextjs 16 as given in `package.json`]
 - **Styling:** Tailwind CSS with CSS variables for theming
 - **UI Components:** shadcn/ui components with custom modifications
 - **Math Rendering:** KaTeX for LaTeX display, Tamml for LaTeX-to-MathML conversion
-- **Fonts:** Google Fonts (Mozilla Headline, Inter, JetBrains Mono, Roboto, Noto Sans)
+- **Fonts:** use fonts given in public/fonts/*.woff or *.woff2
 - **PWA:** Next-PWA for progressive web app features
 - **Content:** MDX for blog posts with frontmatter support
 - **State Management:** Zustand for global state (theme, UI preferences)
-- **Icons:** Lucide React icons or other currently supported
+- **Icons:** Material icons `npm install material-icons@latest`
 - **Code Highlighting:** Prism.js or Shiki with custom styling
 
 ## **Core Requirements**
@@ -136,7 +136,7 @@ use necessary API routes whenever needed.
 
 ### **Typography Hierarchy:**
 - **Mozilla Headline:** Headers (h1-h3)
-- **Inter:** Body text, navigation
+- **Google Sans:** Body text, navigation
 - **JetBrains Mono:** Code blocks, technical data
 - **Roboto:** UI elements, buttons
 - **Noto Sans:** Fallback for symbols/equations
