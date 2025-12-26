@@ -1,23 +1,31 @@
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="text-center">
-        <h1 className="font-heading text-4xl font-bold tracking-tight lg:text-5xl">
-          Mozilla Headline Font (Heading)
-        </h1>
-        <p className="mt-4 font-sans text-lg">
+    <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gradient-to-br from-background to-secondary">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
+      <div className="text-center mb-12">
+        <h1>Mozilla Headline Font (Heading)</h1>
+        <p className="mt-4 text-lg">
           Inter Font (Sans-serif Body)
         </p>
-        <p className="mt-2 font-google-sans text-lg">
-          Google Sans Font (Google Sans)
-        </p>
-        <p className="mt-2 font-roboto text-lg">
-          Roboto Font (Roboto)
-        </p>
-        <code className="mt-4 block rounded-md bg-muted p-4 font-mono text-sm">
-          JetBrains Mono Font (Monospace Code)
-        </code>
       </div>
+      <Card className="w-full max-w-md shadow-soft-lg">
+        <CardHeader>
+          <CardTitle>Branded Card</CardTitle>
+          <CardDescription>This card showcases the new aesthetic.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>It features soft shadows and rests on a subtle gradient background.</p>
+          <Button className="mt-6 w-full bg-gradient-primary text-primary-foreground">
+            Primary Action
+          </Button>
+        </CardContent>
+      </Card>
     </main>
   );
 }

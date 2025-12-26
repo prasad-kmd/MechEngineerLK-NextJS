@@ -65,6 +65,18 @@ const config = {
         roboto: ["var(--font-roboto)"],
         "google-sans": ["var(--font-google-sans)"],
       },
+      boxShadow: {
+        "soft-sm": "0 1px 2px 0 hsla(var(--foreground), 0.05)",
+        "soft": "0 1px 3px 0 hsla(var(--foreground), 0.1), 0 1px 2px 0 hsla(var(--foreground), 0.06)",
+        "soft-md": "0 4px 6px -1px hsla(var(--foreground), 0.1), 0 2px 4px -1px hsla(var(--foreground), 0.06)",
+        "soft-lg": "0 10px 15px -3px hsla(var(--foreground), 0.1), 0 4px 6px -2px hsla(var(--foreground), 0.05)",
+        "soft-xl": "0 20px 25px -5px hsla(var(--foreground), 0.1), 0 10px 10px -5px hsla(var(--foreground), 0.04)",
+        "soft-2xl": "0 25px 50px -12px hsla(var(--foreground), 0.25)",
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-primary': 'linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)))',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
