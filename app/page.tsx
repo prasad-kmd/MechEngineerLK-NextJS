@@ -10,18 +10,18 @@ export default function Home() {
       </div>
       <div className="text-center mb-12">
         <h1>Mozilla Headline Font (Heading)</h1>
-        <p className="mt-4 text-lg">
+        <p className="mt-4 text-lg font-inter">
           Inter Font (Sans-serif Body)
         </p>
       </div>
       <Card className="w-full max-w-md shadow-soft-lg">
         <CardHeader>
-          <CardTitle>Branded Card</CardTitle>
-          <CardDescription>This card showcases the new aesthetic.</CardDescription>
+          <CardTitle className="font-google-sans">Branded Card</CardTitle>
+          <CardDescription className="font-roboto">This card showcases the new aesthetic.</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>It features soft shadows and rests on a subtle gradient background.</p>
-          <Button className="mt-6 w-full bg-gradient-primary text-primary-foreground">
+          <p className="font-mono">It features soft shadows and rests on a subtle gradient background.</p>
+          <Button className="mt-6 w-full bg-gradient-primary text-primary-foreground font-google-sans">
             Primary Action
           </Button>
         </CardContent>

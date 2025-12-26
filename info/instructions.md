@@ -1,208 +1,183 @@
 
-## **Project Overview**
-Create a responsive, high-performance web application combining portfolio, blog, and PWA features for a mechanical engineering professional. The application should showcase engineering projects, technical articles with mathematical equations, and professional information in an aesthetically pleasing interface with dark/light themes.
+> Context: Continue from the current Next.js 16 + Tailwind project without initializing a new app or altering the existing file structure. Implement an elegant, brand-fusion design (not minimalistic) with dark/light themes, PWA capabilities, sophisticated navbar/footer, hero sections, About/Contact/Services pages, and a blog/articles system featuring pagination, list/grid views, KaTeX-rendered math with LaTeX/MathML copy actions, and custom code boxes with copy. Use shadcn UI, Tailwind CSS, KaTeX, Tamml (LaTeX→MathML), and Material Icons. Use local fonts from public/fonts/*.woff/*.woff2 (Mozilla Headline, Inter, JetBrains Mono, Roboto, Google Sans, etc.). Optimize content and performance throughout.
 
-## **Technical Stack**
-- **Framework:** Next.js latest (App Router) with TypeScript [do not change the nextjs & tailwind version, just keep it nextjs 16 as given in `package.json`]
-- **Styling:** Tailwind CSS with CSS variables for theming
-- **UI Components:** shadcn/ui components with custom modifications
-- **Math Rendering:** KaTeX for LaTeX display, Tamml for LaTeX-to-MathML conversion
-- **Fonts:** use fonts given in public/fonts/*.woff or *.woff2
-- **PWA:** Next-PWA for progressive web app features
-- **Content:** MDX for blog posts with frontmatter support
-- **State Management:** Zustand for global state (theme, UI preferences)
-- **Icons:** Material icons `npm install material-icons@latest`
-- **Code Highlighting:** Prism.js or Shiki with custom styling
-
-## **Core Requirements**
-
-### **1. Project Structure**
-Use default nextjs project structure
-
-### **2. Theme System**
-- Implement dark/light mode with system preference detection
-- Theme toggle in navbar with smooth transitions
-- CSS custom properties for consistent theming
-- Separate color schemes for engineering aesthetic (industrial colors)
-
-### **3. Layout Components**
-
-#### **Sophisticated Navbar:**
-- Logo/Name with engineering-themed design
-- Responsive mobile menu with animation
-- Theme toggle
-- Search bar for blog/articles
-- User menu (if authentication added later)
-- Sticky behavior with backdrop blur
-
-#### **Advanced Footer:**
-- Multi-column layout
-- Contact information
-- Social media links
-- Quick links to portfolio sections
-- Copyright and legal information
-- Back-to-top button
-
-### **4. Home Page Structure**
-
-Hero Section:
-- Engineering-themed hero image/video background
-- Name, title, specialization
-- Call-to-action buttons (View Projects, Contact, Blog)
-- Animated technical elements (gears, graphs, etc.)
-
-Featured Projects Section:
-- Grid of 3-4 highlighted engineering projects
-- Hover effects with project details
-- Links to full portfolio
-
-Recent Articles Section:
-- Latest 3-6 blog posts
-- Preview cards with categories/tags
-
-Services/Expertise Section:
-- Engineering domains (FEA, CAD, Thermodynamics, etc.)
-- Icons and brief descriptions
-
-Testimonials/Client Logos Section
-
-
-### **5. Portfolio Pages**
-- `/portfolio` - Grid view of all projects
-- `/portfolio/[slug]` - Detailed project view with:
-  - Project gallery (images, CAD models, diagrams)
-  - Technical specifications table
-  - Engineering calculations/renderings
-  - Related projects
-
-### **6. Blog System**
-
-#### **Blog Listing Page (`/blog`):**
-- Toggle between list/grid view
-- Pagination (10-12 posts per page)
-- Filter by categories/tags
-- Search functionality
-- Sort by date, popularity, category
-
-#### **Blog Post Page (`/blog/[slug]`):**
-- Post header with:
-  - Title
-  - Author (with bio/avatar)
-  - Published date
-  - Updated date (if different)
-  - Categories and tags (clickable)
-  - Estimated reading time
-
-- Content area with:
-  - KaTeX-rendered equations with copy buttons
-  - Custom code blocks with:
-    - Language label
-    - Copy button
-    - Syntax highlighting
-  - Responsive images/videos
-  - Engineering diagrams/charts
-
-- Post footer:
-  - Share buttons (with Web Share API)
-  - Author bio
-  - Related posts
-  - Comments section (optional)
-
-#### **Math Equation Component:**
-- user will add latex equation within $(one dollar marks) for inline math and $$(two dollar marks) for display math.
-- Renders KaTeX and MathML simultaneously
-- Copy buttons for LaTeX source and MathML
-- Accessible with proper ARIA labels
-
-### **7. Additional Pages**
-- `/about` - Professional bio, education, certifications, timeline
-- `/services` - Detailed engineering services
-- `/contact` - Contact deatils(not a form), location map, direct contact info
-- `/articles` - Technical articles (separate from blog)
-
-### **8. PWA Features**
-- Install prompt with custom engineering-themed install UI
-- Service worker for offline capabilities
-- Background sync for forms
-- Push notifications (with user permission)
-- Web Share API integration
-- App manifest with engineering-themed icons
-- Splash screens
-
-### **9. API Routes**
-use necessary API routes whenever needed.
-
-## **Design Specifications**
-
-### **Typography Hierarchy:**
-- **Mozilla Headline:** Headers (h1-h3)
-- **Google Sans:** Body text, navigation
-- **JetBrains Mono:** Code blocks, technical data
-- **Roboto:** UI elements, buttons
-- **Noto Sans:** Fallback for symbols/equations
-
-### **Color Palette (Light Theme):**
-- Primary: Industrial blue (#2A6EBB)
-- Secondary: Steel gray (#4A5568)
-- Accent: Engineering orange (#DD6B20)
-- Background: Light gray (#F7FAFC)
-- Surface: White (#FFFFFF)
-
-### **Color Palette (Dark Theme):**
-- Primary: Engineering cyan (#38B2AC)
-- Secondary: Cool gray (#CBD5E0)
-- Accent: Safety yellow (#ECC94B)
-- Background: Dark charcoal (#1A202C)
-- Surface: Dark gray (#2D3748)
-
-### **Animation & Interactions:**
-- Smooth page transitions
-- Hover effects on cards/buttons
-- Loading skeletons
-- Scroll-triggered animations for technical elements
-- Physics-based animations for engineering concepts
-
-## **Performance Optimizations**
-- Image optimization with Next.js Image component
-- Font optimization with next/font/google
-- Code splitting and lazy loading
-- Dynamic imports for heavy components
-- Static generation for blog posts
-- Incremental Static Regeneration for frequently updated content
-- Optimized math rendering (client-side only for equations)
-
-## **Accessibility Requirements**
-- WCAG 2.1 AA compliance
-- Keyboard navigation
-- Screen reader support for equations (via MathML)
-- Proper ARIA labels
-- Focus management
-- Reduced motion preferences
-
-## **SEO Features**
-- Semantic HTML structure
-- Open Graph tags for social sharing
-- JSON-LD structured data for:
-  - Person (engineer)
-  - Blog posts
-  - Portfolio projects
-- Sitemap generation
-- Robots.txt configuration
-
-## **Content Management**
-- MDX files with frontmatter:
-```yaml
 ---
-title: "Finite Element Analysis of Composite Materials"
-author: "John Engineer"
-date: "2024-01-15"
-updated: "2024-01-20"
-categories: ["FEA", "Composite Materials"]
-tags: ["ANSYS", "Carbon Fiber", "Simulation"]
-excerpt: "Analysis of composite material behavior under stress..."
-mathPreview: true
-featuredImage: "/images/composite-analysis.jpg"
----
-```
 
-## Important - no testing or verifications needed at this point. i'll do it manually.
+## Stage 1: Dependencies, configuration, and design foundations
+
+- **Goal:** Ensure the project is ready with required libraries and base configs, without re-initializing or removing current content.
+- **Do:**
+  - **Install:** Tailwind plugins if needed, shadcn UI, KaTeX, Tamml, Material Icons, and PWA support.
+    - Ensure compatibility with Next.js 16 and App Router where applicable.
+    - Use `npm install` with the latest versions that support Next.js 16. Do not run any command that re-initializes Next.js.
+  - **Theme config:** Extend Tailwind theme for brand-fusion aesthetics (rich contrasts, layered accents, subtle gradients, glass/satin finishes).
+  - **Color tokens:** Define semantic color tokens (e.g., brandPrimary, brandAccent, surface, muted, success, warning, error) with dark/light variants.
+  - **Typography:** Register local fonts from `public/fonts/*.woff2/*.woff` (Mozilla Headline, Inter, JetBrains Mono, Roboto, Google Sans). Use CSS `@font-face` and Tailwind font stacks. Do not use the default Next.js font loader.
+  - **Icon system:** Use Material Icons via `npm install material-icons@latest`. Provide a utility to render outlined/rounded/filled variants.
+  - **shadcn UI:** Add components for Button, Input, Select, Dialog, Dropdown, Tabs, Card, Toast, Alert, Tooltip, Pagination, and ThemeToggle; style to match brand-fusion design.
+  - **Global styles:** Ensure Tailwind base, components, and utilities are loaded; add smooth typography, focus rings, transitions, and reduced motion fallbacks.
+- **KaTeX & Tamml:**
+  - Add KaTeX CSS globally.
+  - Prepare a math rendering utility that:
+    - Detects inline and block LaTeX.
+    - Renders with KaTeX.
+    - Uses Tamml to generate MathML from the same LaTeX source.
+- **Acceptance criteria:**
+  - No change to project initialization or file structure.
+  - Dark/light tokens available through CSS variables and Tailwind.
+  - Local fonts applied across the site; JetBrains Mono used in code blocks.
+  - Material Icons render correctly.
+  - KaTeX renders sample inline/block equations; MathML conversion works via Tamml.
+
+---
+
+## Stage 2: Theming, brand-fusion aesthetics, and typography polish
+
+- **Goal:** Implement an elegant, layered visual style with theme toggling and accessible color contrast.
+- **Do:**
+  - **Theme toggle:** Implement a persistent dark/light theme toggle with system preference detection and user override (store in localStorage).
+  - **Brand fusion look:** 
+    - Subtle gradients on hero surfaces.
+    - Soft shadows and depth for Cards.
+    - Micro-interactions: hover lifts, gentle scale, ambient border glow for focus.
+    - Satin/glass panels for nav, footer, and CTAs with backdrop blur in supported themes.
+  - **Spacing rhythm:** Establish consistent vertical rhythm (4/6/8px scale) and responsive typography sizes.
+  - **Accessibility:** Ensure WCAG AA+ color contrast; visible focus states; logical heading hierarchy.
+- **Acceptance criteria:**
+  - Theme toggle updates CSS variables without layout shifts.
+  - Typography is legible, elegant; headings use Mozilla Headline or Google Sans; body uses Inter/Roboto; code uses JetBrains Mono.
+  - All interactive components have clear focus styles and meet contrast requirements.
+
+---
+
+## Stage 3: Layout, sophisticated navbar, and footer
+
+- **Goal:** Create a polished site chrome with responsive behavior, PWA-friendly app-feel, and deep navigation.
+- **Do:**
+  - **Layout shell:** Implement a shared layout with:
+    - Sticky, translucent navbar with scroll-aware behavior (e.g., compact on scroll).
+    - Footer with multi-column links, brand statement, contact info, social, and legal.
+    - Global announcement/notification bar (dismissible) for updates.
+  - **Navbar features:**
+    - Logo/brand mark, primary navigation (Home, Projects, Blog, Articles, About, Services, Contact).
+    - Secondary actions: ThemeToggle, Search, Share, Notifications opt-in/status.
+    - Material Icons for menu, search, share, notifications, theme.
+    - Mobile: Animated drawer with nested items and quick actions.
+  - **Footer features:**
+    - Newsletter signup (shadcn Input + Button).
+    - Quick links to categories/tags.
+    - Contact microform (email-only, spam-safe).
+    - Attribution and last build timestamp.
+  - **Search:** Implement client-side search scaffolding (UI, input, results list) for posts/projects with room for future indexing.
+- **Acceptance criteria:**
+  - Navbar transitions smoothly; mobile menu is accessible and keyboard-navigable.
+  - Footer content structured, balanced, and responsive.
+  - Search UI functional (even with placeholder data); no console errors.
+  - Announcement bar and toast notifications in place.
+
+---
+
+## Stage 4: Home, About, Services, and Contact pages
+
+- **Goal:** Build branded pages that present the mechanical engineer’s profile and offerings.
+- **Do:**
+  - **Home (Hero):**
+    - Hero section with name, title (“Mechanical Engineer”), brief value proposition, CTA buttons (View Projects, Read Articles).
+    - Background treatment (gradient + abstract geometry hinting at mechanics: arcs, stress lines, mesh).
+    - Stats band (years experience, publications, projects, certifications).
+    - Featured content carousels: highlighted public projects and latest blog/articles.
+  - **About:**
+    - Biography, skills (materials, CAD/CAE, thermodynamics, control systems), tools (MATLAB, Simulink, SolidWorks, ANSYS).
+    - Timeline of education and milestones.
+    - Downloadable CV button; badges for certifications.
+  - **Services:**
+    - Cards for consulting, design & simulation, prototyping, data analysis & visualization, documentation.
+    - Each with icon, description, pricing note (“on request”), CTA to contact.
+  - **Contact:**
+    - Form with name, email, message; validation and success/error toasts.
+    - Optional file attachment hint (future scope, do not implement upload now).
+    - Social links and location snippet.
+- **Acceptance criteria:**
+  - Hero is visually striking but performant (optimized images, CSS-only effects where possible).
+  - Pages responsive and accessible; forms validate and provide clear feedback.
+  - All CTAs navigate to relevant sections.
+
+---
+
+## Stage 5: Blog and articles system with math, code, metadata, and pagination
+
+- **Goal:** Implement robust listing and detail views for posts and articles, with math/code support and copy utilities.
+- **Do:**
+  - **Data model & metadata:** Support author, published date, updated date, categories, tags, summary, reading time, cover image, canonical URL.
+  - **List and grid views:** Toggle between list and grid; remember user preference.
+  - **Pagination:** Client-side or server-side pagination that is accessible; show page count and current page; URL reflects page.
+  - **Filters:** By category and tag; combinable; clear filter chips with remove action.
+  - **Post detail (MDX or markdown compatible):**
+    - Render KaTeX for inline and block math.
+    - Immediately after any rendered equation, show two small action buttons:
+      - “Copy LaTeX” (copies the original LaTeX source).
+      - “Copy MathML” (uses Tamml to convert and copies the MathML string).
+    - Code blocks:
+      - Custom code box with header showing language and optional filename.
+      - Copy button with success/failure toast.
+      - Syntax highlighting compatible with JetBrains Mono.
+    - Metadata header:
+      - Author avatar/name.
+      - Published date, and updated date if present.
+      - Categories and tags as interactive chips.
+    - Share and notifications:
+      - Web Share API button (title, text, URL).
+      - Notification opt-in for updates to this post (subscribe/unsubscribe UI).
+  - **Empty states:** Graceful empty listings with helpful copy.
+- **Acceptance criteria:**
+  - List/grid toggle works and persists.
+  - Pagination updates view without layout shifts and is keyboard-accessible.
+  - Math renders correctly, with working “Copy LaTeX” and “Copy MathML” buttons placed immediately after each equation.
+  - Code blocks have functioning copy and clean visual styling.
+  - Post metadata displays accurately; share and notifications UI works where permissions allow.
+
+---
+
+## Stage 6: PWA, APIs (notifications/share), performance, SEO, and accessibility
+
+- **Goal:** Make the site installable, app-like, and optimized.
+- **Do:**
+  - **PWA:**
+    - Manifest with name/short_name, icons (dark/light friendly), theme_color/background_color, display: standalone.
+    - Service worker for offline caching of critical routes and assets; graceful fallback for dynamic content.
+    - Install prompt UI and “Add to Home Screen” affordance.
+  - **Notifications API:**
+    - Permission request flow: clear, respectful, and cancellable.
+    - Topic-based subscription (e.g., “New Articles”, “Project Updates”) using client-side stubs and local storage for state; provide toasts for status.
+    - Handle denied and default states with informative messages.
+  - **Web Share API:** Consolidate share actions on posts and project pages; feature-detect availability.
+  - **Performance:**
+    - Optimize images with Next/Image where already used.
+    - Preload key fonts; use `font-display: swap`.
+    - Route-level code splitting; lazy-load heavy components (carousels, charts).
+    - Avoid layout shifts; reserve image space; use CSS containment where beneficial.
+  - **SEO:**
+    - Structured metadata (title, description, canonical, Open Graph/Twitter cards).
+    - JSON-LD for Articles and Projects.
+    - Clean URL slugs; breadcrumbs.
+  - **Accessibility:**
+    - ARIA where needed; labels for form controls.
+    - Skip-to-content link; logical tab order; reduced motion respect.
+    - Validate color contrast for both themes.
+- **Acceptance criteria:**
+  - App is installable; manifest and service worker pass audits.
+  - Notifications and share UIs behave correctly with permissions and feature detection.
+  - Lighthouse shows strong scores for Performance, Accessibility, Best Practices, and SEO.
+  - No regressions to existing content; all optimizations maintain visual quality.
+
+---
+
+### Global constraints and notes
+
+- **Do not initialize a new Next.js project** or alter the existing file structure. All changes must integrate with current files.
+- **Next.js version:** Continue on Next.js 16; avoid any steps that require downgrading.
+- **Design ethos:** Elegant brand-fusion (layered textures/tones, refined typography, micro-interactions), not minimalistic.
+- **Fonts:** Use only local fonts from `public/fonts` for all typography; no external font loaders.
+- **Icons:** Use Material Icons, not Lucide.
+- **Math & code:** KaTeX for rendering; Tamml to produce MathML; copy buttons immediately follow equations; custom code boxes with copy.
+- **Content optimization:** Prioritize performance, accessibility, and SEO without sacrificing visual richness.
