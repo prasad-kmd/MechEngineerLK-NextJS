@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import "./font.css"
 
 export const metadata: Metadata = {
   title: "Mech Engineer LK",

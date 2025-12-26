@@ -1,0 +1,15 @@
+.font-heading {
+  font-family: var(--font-mozilla-headline);
+}
+.font-google-sans {
+  font-family: var(--font-google-sans);
+}
+.font-sans {
+  font-family: var(--font-inter);
+}
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+.font-mono {
+  font-family: var(--font-jetbrains-mono) !important;
+}
