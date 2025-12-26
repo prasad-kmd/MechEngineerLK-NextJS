@@ -94,8 +94,7 @@
     - Cards for consulting, design & simulation, prototyping, data analysis & visualization, documentation.
     - Each with icon, description, pricing note (“on request”), CTA to contact.
   - **Contact:**
-    - Form with name, email, message; validation and success/error toasts.
-    - Optional file attachment hint (future scope, do not implement upload now).
+    - contact page just with contact details but no form.
     - Social links and location snippet.
 - **Acceptance criteria:**
   - Hero is visually striking but performant (optimized images, CSS-only effects where possible).
