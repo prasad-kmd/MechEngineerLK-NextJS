@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
+import AnnouncementBar from "@/components/announcement-bar";
 import "./globals.css";
-import "./font.css"
+import "./font.css";
 
 export const metadata: Metadata = {
   title: "Mech Engineer LK",
@@ -23,7 +26,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <AnnouncementBar />
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
         </ThemeProvider>
       </body>
     </html>
