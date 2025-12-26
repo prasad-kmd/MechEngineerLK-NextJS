@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import AnnouncementBar from "@/components/announcement-bar";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 import "./font.css";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
